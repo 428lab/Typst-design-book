@@ -29,5 +29,6 @@
 
 #include("contributors.typ")
 
+// 奥付作成用の処理
 #import "/colophon.typ": create_colophon
 #create_colophon(ebook)
