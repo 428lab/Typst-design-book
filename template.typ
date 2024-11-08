@@ -15,8 +15,7 @@
   title: "Book Title",
   author: "Author",
   date: none,
-  paper-size: "a4",
-  colophon: none,
+  paper-size: "jis-b5",
   body,
 ) = {
   let sans = ("Source Han Sans", "Noto Sans CJK JP");
@@ -27,7 +26,7 @@
   set text(
     lang: "ja",
     font: sans,
-    size: 11pt,
+    size: 10pt,
   )
   //
   show raw: set text(
@@ -79,7 +78,7 @@
 
   set page(
     paper: paper-size,
-    margin: (bottom: 1.75cm, top: 2.25cm),
+    margin: (bottom: 1.5cm, top: 2cm),
   )
 
   page(align(center + horizon)[
@@ -277,51 +276,6 @@
 
   // 奥付
   pagebreak(to: "even")
-  set page(numbering: none, header: none, footer: none)
-  v(8%)
-  block(
-    inset: 1em,
-    stroke: 3pt,
-  )[
-    #grid(
-      columns: (auto, 1fr),
-      image("other/QR_605575.png", height: 8em),
-      align(bottom)[
-        #pad(
-          left: 2em,
-          bottom: 2em,
-          [
-            #text(size: 1.7em, weight: 700, "四谷ラボ BOOKS") \
-            https://books.428lab.net
-          ]
-        )
-      ]
-    )
-    #line(length: 100%)
-    #text(size: 0.9em, "Nostr関連のリンクについては、上記のQRコード、またはURLよりアクセスできるWebページにまとめて掲載しています。本誌とあわせてご覧ください。")
-  ]
-  v(1em)
-  // text(size: 2.5em, [#set par(leading: 0.5em);*#title*], )
-  if ebook {
-    stack(dir: ltr, spacing: 0.5em, [
-      #image("other/hello_Nostr_Yo_Bluesky_logo_1c_mono.png", width: 80%)
-    ], align(bottom, )[
-      #text("[電子版]", size: 1.2em, weight: 700)
-      #v(1.5em)
-    ])
-  } else {
-    image("other/hello_Nostr_Yo_Bluesky_logo_1c_mono.png", width: 80%)
-  }
-  set par(first-line-indent: 0pt)
-  if ebook {
-    text([#date.display("[year]年[month padding:none]月[day padding:none]日") 電子版 発行])
-  } else {
-    text([#date.display("[year]年[month padding:none]月[day padding:none]日") 発行])
-  }
-  v(1em)
-  line(length: 100%)
-  v(1em)
-  text(size: 0.9em, colophon)
 }
 
 #let chapter-number-counter = counter("chapter")

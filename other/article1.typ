@@ -25,8 +25,8 @@
     #image("428lab_discord.png", width: 40%)
     #text(weight: 700, "https://discord.gg/vYqHKdZy3Y")
   ]
-  #align(right+bottom)[
-    #image("/illusts/krdrailway/nb-6.png", width: 50%)
-    #v(-2em)
-  ]
+  // #align(right+bottom)[
+  //   #image("/illusts/krdrailway/nb-6.png", width: 50%)
+  //   #v(-2em)
+  // ]
 ]
